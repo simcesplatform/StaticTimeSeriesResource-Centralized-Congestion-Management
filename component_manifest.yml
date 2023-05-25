@@ -1,0 +1,20 @@
+# The component manifest file for the Static Time Series Resource Forecaster component
+
+Name: StaticTimeSeriesResource-Centralized
+Type: platform
+Description: "Static Time Series Resource Centralized component for the SimCes Platform"
+DockerImage: 
+Attributes:
+    ResourceStateComponentIds:
+        Environment: RESOURCE_STATE_COMPONENT_IDS
+        Optional: false
+    ResourceTypes:
+        Environment: RESOURCE_TYPES
+        Optional: false
+    ResourceStateCsvFolder:
+        Environment: RESOURCE_STATE_CSV_FOLDER
+        Optional: false
+    ResourceFileDelimiter:
+        Environment: RESOURCE_STATE_CSV_DELIMITER
+        Optional: true
+        Default: ","
