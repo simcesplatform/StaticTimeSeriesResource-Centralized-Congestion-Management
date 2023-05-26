@@ -9,7 +9,7 @@
 
 from typing import List
 import tools.tools as tools
-from resource_forecaster.resource_forecast_state_source  import CsvFileResourceForecastStateSource, CsvFileError
+from resource_centralized.resource_state_source  import CsvFileResourceStateSource, CsvFileError
 
 LOGGER = tools.FullLogger(__name__)
 
@@ -20,15 +20,14 @@ class SimulationComponents():
         self.__components = {}
         LOGGER.debug("New SimulationComponents object created.")
 
-    def add_component(self, component: str, resource_state_csv_folder: str, resource_forecast_state_csv_delimiter: str, 
-                      forecast_horizon: str, unit_of_measure: str):
+    def add_component(self, component: str, resource_state_csv_folder: str, resource_state_csv_delimiter: str):
         """Adds a new component to the simulation component list.
            If the given component is already in the list, the function prints an error message."""
+        LOGGER.info("adding component stage")
         if component not in self.__components:
             try:
-                self.__components[component] = CsvFileResourceForecastStateSource(resource_state_csv_folder+component+".csv",
-                                                                                       forecast_horizon, unit_of_measure,
-                                                                                       resource_forecast_state_csv_delimiter)
+                self.__components[component] = CsvFileResourceStateSource(resource_state_csv_folder+component+".csv",
+                                                                                       resource_state_csv_delimiter)
                 initialization_error = None
                 LOGGER.info("Component: {:s} registered to SimulationComponents.".format(component))
             except CsvFileError as error:
@@ -36,7 +35,7 @@ class SimulationComponents():
                 initialization_error = f'Unable to create a csv file resource forecast state source for the component: {str( error )}'
                 LOGGER.warning("Component: {:s} {:s}".format(component, initialization_error))
         else:
-            LOGGER.warning("{:s} is already registered to the simulation component list".format(component_id))    
+            LOGGER.warning("{:s} is already registered to the simulation component list".format(component))    
 
     def remove_component(self, component: str):
         """Removes the given component from the simulation component list.

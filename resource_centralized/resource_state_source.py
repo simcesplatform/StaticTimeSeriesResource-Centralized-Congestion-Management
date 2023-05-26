@@ -5,6 +5,7 @@
 # Author(s): Ville Heikkilä <ville.heikkila@tuni.fi>
 #            Otto Hylli <otto.hylli@tuni.fi>
 #            Kalle Ruuth <kalle.ruuth@tuni.fi>
+#            Mehdi Attar <mehdi.attar@tuni.fi>
 
 '''
 Contains classes related to reading the resource state from a csv file.
@@ -14,6 +15,8 @@ from dataclasses import dataclass
 
 import csv
 
+import tools.tools as tools
+LOGGER = tools.FullLogger(__name__)
 
 @dataclass
 class ResourceState():
@@ -49,6 +52,7 @@ class CsvFileResourceStateSource():
         Raises CsvFileError if file cannot be read e.g. file not found, or it is missing required columns.
         '''
         self._file = None  # required if there is no file and the __del__ method is executed
+        LOGGER.info("file name is {}".format(file_name))
         try:
             self._file = open(file_name, newline="", encoding="utf-8")
 

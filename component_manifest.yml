@@ -1,4 +1,4 @@
-# The component manifest file for the Static Time Series Resource Forecaster component
+# The component manifest file for the Static Time Series Resource Centralized component
 
 Name: StaticTimeSeriesResource-Centralized
 Type: platform
@@ -18,3 +18,4 @@ Attributes:
         Environment: RESOURCE_STATE_CSV_DELIMITER
         Optional: true
         Default: ","
+    
