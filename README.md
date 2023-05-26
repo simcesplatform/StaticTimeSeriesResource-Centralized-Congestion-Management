@@ -1,6 +1,6 @@
 # static-time-series-resource-centralized
 
-A simulation platform component used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that it several loads or generators within one container can be deployed.
+A simulation platform component used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that several loads or generators within one container can be deployed.
 
 ## Requirements
 
