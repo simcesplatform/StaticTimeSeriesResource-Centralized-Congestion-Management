@@ -1,6 +1,6 @@
-# static-time-series-resource-centralized
+# StaticTimeSeriesResource-centralized
 
-A simulation platform component used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that several loads or generators within one container can be deployed.
+A simulation platform component cab be used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that several loads or generators within one container can be deployed whereas in [StaticTimeSeriesResource](https://github.com/simcesplatform/static-time-series-resource) every load/generator is run in a seperate container. Therefore, the StaticTimeSeriesCentralized needs less computational resources and makes the simulations faster.
 
 The component is only deployable in the [SimCES ](https://simcesplatform.github.io/)platform.
 
@@ -31,7 +31,6 @@ The component is based on the AbstractSimulationCompoment class from the [simula
 * RESOURCE_STATE_CSV_DELIMITER (optional): Delimiter used in the csv file. The default is ,
 
 The csv file should contain columns named after the ResourceState message attributes: RealPower, ReactivePower, CustomerId and Node. The Node column is optional. Each row containing values will then represent data for one epoch. There should be at least as many data rows as there will be epochs.
-
 
 ## **Implementation details**
 
