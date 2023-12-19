@@ -1,6 +1,6 @@
 # StaticTimeSeriesResource-centralized
 
-A simulation platform component cab be used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that several loads or generators within one container can be deployed whereas in [StaticTimeSeriesResource](https://github.com/simcesplatform/static-time-series-resource) every load/generator is run in a seperate container. Therefore, the StaticTimeSeriesCentralized needs less computational resources and makes the simulations faster.
+A simulation platform component cab be used to simulate simple loads and generators whose published states are determined by a file containing a time series of attribute values for each epoch. The component is centralized meaning that several loads or generators within one container can be deployed whereas in [StaticTimeSeriesResource](https://github.com/simcesplatform/static-time-series-resource) each load/generator is run in a seperate container. Therefore, the StaticTimeSeriesCentralized needs less computational resources and makes the simulations faster.
 
 The component is only deployable in the [SimCES ](https://simcesplatform.github.io/)platform.
 
